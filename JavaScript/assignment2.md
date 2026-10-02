@@ -188,6 +188,117 @@ c) Give one example of a Non-Primitive data type and explain why it is considere
 Answer: <img width="1600" height="1437" alt="image" src="https://github.com/user-attachments/assets/e70fce05-5647-4e75-af71-0c62e7bdcfb9" />
 <img width="1080" height="1442" alt="image" src="https://github.com/user-attachments/assets/0566946c-b77d-48cf-87b5-377859c698df" />
 
+Part H] - Non-Primitive Data Types Basic Creation & Usage (4 Questions)
+1. Create an Object
+Create an object named student with the following properties:
+
+name → "Riya"
+age → 18
+isEnrolled → true
+Print the entire object and then print each property individually.
+
+2. Work with Arrays
+Create two arrays:
+
+scores containing only numbers: 85, 92, 78, 90
+mixedData containing different types: a number, a string, a boolean, and null
+Print both arrays. Also print the first and last element of the scores array using index.
+
+3. Declare and Call a Function
+Write a function named calculateArea that takes two parameters (length and width) and returns the area of a rectangle.
+Call the function twice with different values and print the results.
+
+4. Check Types with typeof
+Create variables of the following types and print both the value and its type using typeof:
+
+A number
+A string
+A boolean
+null
+An object
+An array
+A function
+Observe and note any surprising results (especially with null and arrays).
+
+Answer:<img width="1080" height="1471" alt="image" src="https://github.com/user-attachments/assets/c7f09e81-2ada-44c2-a0c0-e853d477b4c5" />
+<img width="1080" height="1378" alt="image" src="https://github.com/user-attachments/assets/5ea5f85d-2dae-4743-aa06-9d372d18d9e3" />
+
+Part I] - Naming Rules & Best Practices (3 Questions)
+5. Valid vs Invalid Variable Names
+Identify which of the following variable names are valid and which are invalid. For invalid ones, explain why.
+
+let userName;
+let 2ndPlace;
+let _privateData;
+let $price;
+let my-age;
+let function;
+let totalCount;
+let const;
+6. Apply Best Practices
+Rewrite the following poorly written code using best practices (const/let, meaningful names, camelCase, UPPERCASE for constants):
+
+let x = 10;
+let y = 5;
+let a = x * y;
+let b = 100;
+7. Declaration & Assignment
+Write code that demonstrates:
+
+Declaring a variable without assigning a value, then assigning a value later
+Declaring and assigning a value in one step
+Creating a constant that cannot be changed
+Print all variables.
+
+Answer:<img width="1015" height="1600" alt="image" src="https://github.com/user-attachments/assets/e60e060c-e0bf-4a0d-a9f3-2fccff9afd1d" />
+<img width="899" height="1599" alt="image" src="https://github.com/user-attachments/assets/56c46427-c19c-4485-a9b2-345e05f74662" />
+
+Part J] - Prediction & Fixing (3 Questions)
+8. Predict the Output
+Without running the code, predict what each console.log will print. Explain your reasoning (especially for typeof).
+
+let person = { name: "Amit", age: 22 };
+let colors = ["red", "green", "blue"];
+function sayHi() {
+  return "Hi!";
+}
+let empty = null;
+
+console.log(typeof person);
+console.log(typeof colors);
+console.log(typeof sayHi);
+console.log(typeof empty);
+console.log(person.name);
+console.log(colors[1]);
+console.log(sayHi());
+9. Fix the Program
+The following code has multiple errors related to objects, arrays, functions, naming rules, and best practices. Fix it so that it runs correctly.
+
+let 1student = { name: "Neha", Age: 19 }
+let scores = 90, 85, 88
+function greet {
+  return "Hello " + name
+}
+const maxScore = 100
+maxScore = 95
+console.log(1student.name)
+console.log(scores[0])
+console.log(greet("Neha"))
+10. Concept Questions
+Answer the following in your own words with examples:
+
+a) What is the main difference between an Object and an Array?
+b) Why does typeof null return "object"? Is null really an object?
+c) Why is it recommended to keep arrays with a single data type?
+d) When should you use const and when should you use let?
+
+Answer:<img width="1080" height="1317" alt="image" src="https://github.com/user-attachments/assets/59c79e79-942b-4faf-97d5-62c06201696f" />
+<img width="1080" height="1501" alt="image" src="https://github.com/user-attachments/assets/f6b20aa4-6f08-427a-a16d-786d7085252c" />
+
+
+
+
+
 
 
 
