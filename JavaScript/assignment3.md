@@ -581,6 +581,265 @@ if (input !== "0") {
 }
 !== checks value + type and returns true if either is different.
 
+Part C] Relational Operator
+5. Greater Than >
+A student’s marks are 78. The passing marks are 40. Check whether the student has scored more than the passing marks.
+Temperature today is 35°C and yesterday it was 28°C. Check if today is hotter.
+Predict the output:
+console.log(15 > 10);
+console.log(10 > 15);
+console.log(10 > 10);
+Predict the output:
+console.log("20" > 15);
+console.log("5" > "10");
+console.log("abc" > 10);
+What is the result of null > 0 and undefined > 0? Explain.
+A shop has 120 items in stock. A customer wants to buy 85 items. Write a condition using > to check if stock is sufficient.
+Predict and explain:
+console.log(true > false);
+console.log("10" > "2");
+console.log(NaN > 5);
+
+Answer:
+1.
+let studentMarks = 78;
+let passingMark = 40;
+let hasScoredPassingMarks=studentMarks>passingMark;
+console.log(hasScoredPassingMarks);
+
+2.
+let todayTemperature = 35
+let yesterdayTemperature = 28
+let todayIsHotter=todayTemperature>yesterdayTemperature
+console.log(todayIsHotter)
+
+3.
+console.log(15 > 10);   //true
+console.log(10 > 15);   //false
+console.log(10 > 10);   //false
+
+4.
+console.log("20" > 15);   //true
+console.log("5" > "10");  //true
+console.log("abc" > 10);  //false
+
+5.
+console.log(null>0)  //false because the value of null is also 0
+console.log(undefined>0)  //false because the value of undefined is Nan
+
+6.
+let inStock = 120
+let customerwants = 85
+let sufficientStock = inStock>customerwants
+console.log("Is stock is sufficient",sufficientStock)
+
+7.
+console.log(true > false);  //true because the value of false is 0 
+console.log("10" > "2");  //because of assci values
+console.log(NaN > 5);    //false becuse nan is not comparable to number
+
+6. Less Than <
+A box can hold maximum 50 kg. Current weight is 42 kg. Check if more items can still be added.
+Age of a person is 16. Minimum age required is 18. Check if the person is underage.
+Predict the output:
+console.log(8 < 12);
+console.log(20 < 10);
+console.log(7 < 7);
+Predict the output:
+console.log("8" < 10);
+console.log("20" < "3");
+console.log("hello" < 5);
+What is the result of null < 0 and undefined < 0? Explain.
+A tank capacity is 500 litres. Current water level is 375 litres. Write a condition using < to check if it is not full.
+Predict and explain:
+console.log(false < true);
+console.log("5" < "15");
+console.log(NaN < 10);
+
+Answer:
+1.
+let boxHold = 50
+let currentWeight = 42
+let canHoldWeight = boxHold<currentWeight
+console.log(" if more items can still be added.",canHoldWeight)
+
+2.
+let personAge = 16
+console.log("if the person is underage.", personAge<18)
+
+3.
+console.log(8 < 12);  //true
+console.log(20 < 10);  //false
+console.log(7 < 7);  //false
+
+4.
+console.log("8" < 10);  //true
+console.log("20" < "3");  //true
+console.log("hello" < 5);  //false
+
+5.
+console.log(null < 0)  //false because the value of null is 0
+console.log(undefined < 0)  //false because the value of undefined is Nan
+
+6.
+let capacity = 500
+let level = 375
+let check=level<capacity
+console.log("if it is not full.",check)
+
+7.
+console.log(false < true);  //true because the value of false is 0
+console.log("5" < "15");   //false because it checks assci values
+console.log(NaN < 10);    //false because Nan cannot be comparable to number
+
+7. Greater Than or Equal To >=
+Minimum marks required for distinction is 75. A student scored 75. Check if the student gets distinction.
+Ticket price is ₹300. A person has ₹300. Check if they can buy the ticket.
+Predict the output:
+console.log(25 >= 25);
+console.log(30 >= 25);
+console.log(20 >= 25);
+Predict the output:
+console.log("25" >= 25);
+console.log("10" >= "2");
+console.log(null >= 0);
+What is the result of undefined >= 0? Explain.
+A lift can carry maximum 8 people. Currently 8 people are inside. Write a condition using >= to check if the lift is full or overloaded.
+Predict and explain:
+console.log(true >= 1);
+console.log("" >= 0);
+console.log(NaN >= NaN);
+
+Answer:
+1.
+let marks = 75
+let minimumMarks = 75
+console.log("if the student gets distinction.",marks>=minimumMarks)
+
+2.
+let ticketPrice = 300
+let personHas = 300
+console.log("they can buy the ticket.",ticketPrice>=personHas)
+
+3.
+console.log(25 >= 25);   //true
+console.log(30 >= 25);   //true
+console.log(20 >= 25);   //false
+
+4.
+console.log("25" >= 25);  //true
+console.log("10" >= "2");  //false
+console.log(null >= 0);  //true
+
+5.
+console.log(undefined >= 0)  //false because the value of undefined is Nan
+
+6.
+let maximumPeople = 8
+let peopleInside = 8
+console.log(" if the lift is full or overloaded.",maximumPeople>peopleInside)
+
+7.
+console.log(true >= 1);   //true because the value of true is 1
+console.log("" >= 0);    //false because empty string also contains 0 value
+console.log(NaN >= NaN);  //false because Nan is not equal to itself
+
+8. Less Than or Equal To <=
+Maximum speed limit is 60 km/h. A vehicle is travelling at 60 km/h. Check if it is within the limit.
+A student needs at least 40 marks to pass. He scored 39. Check if he has failed.
+Predict the output:
+console.log(15 <= 20);
+console.log(20 <= 15);
+console.log(15 <= 15);
+Predict the output:
+console.log("15" <= 20);
+console.log("30" <= "5");
+console.log(null <= 0);
+What is the result of undefined <= 0? Explain.
+A bag can hold maximum 10 books. Currently it has 10 books. Write a condition using <= to check if more books can be added.
+Predict and explain:
+console.log(false <= 0);
+console.log("" <= 0);
+console.log(NaN <= 5);
+
+Answer:
+1.
+let maximumSpeed = 60
+let travellingVehicle = 60
+console.log("it is within the limit.",maximumSpeed<=travellingVehicle)
+
+2.
+let passingMarks = 40
+let studentScored = 39
+console.log(" if he has failed.",passingMarks<=studentScored)
+
+3.
+console.log(15 <= 20);   //true
+console.log(20 <= 15);   //false
+console.log(15 <= 15);   //true
+
+4.
+console.log("15" <= 20);  //true
+console.log("30" <= "5");  //true
+console.log(null <= 0);  //true
+
+5.
+console.log(undefined <= 0)  //false because undefined has value Nan
+
+6.
+let bagHolds = 10
+let currentlyBook = 10
+console.log("more books can be added.",bagHolds<=currentlyBook)
+
+7.
+console.log(false <= 0);  //true because false has 0 value
+console.log("" <= 0);  //true because empty string also contains 0 value
+console.log(NaN <= 5);  //false because Nan is not lessthan or equal to 5
+
+Mixed Practice (>, <, >=, <=)
+Write expressions to check:
+Whether age 18 is greater than or equal to voting age 18.
+Whether temperature 32 is less than 35.
+Whether score 90 is greater than 85.
+Predict the outputs:
+console.log(10 > 5 && 5 < 10);
+console.log("10" >= 10);
+console.log(null <= undefined);
+console.log("5" < "10" && 5 > 2);
+A product costs ₹499. A customer has ₹500. Write conditions using >= and < to decide if the customer can buy it and if any change will be left.
+Explain why "10" > "2" is false but 10 > 2 is true.
+
+Answer:
+1.
+let age = 18 
+console.log(age >=18)   //true
+console.log(32 < 35);   // true
+console.log(90 > 85);   // true
+
+2.
+console.log(10 > 5 && 5 < 10);   //true
+console.log("10" >= 10);   //true
+console.log(null <= undefined);   //false
+console.log("5" < "10" && 5 > 2);   //false
+
+3.
+let price = 499;
+let money = 500;
+
+console.log(money >= price); // true
+console.log(money < price);  // false
+console.log(money > price);  // true
+
+4.
+console.log("10" > "2"); // false
+console.log(10 > 2);     // true
+
+
+
+
+
+
+
 
 
 
