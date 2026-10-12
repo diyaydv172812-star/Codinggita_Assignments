@@ -834,6 +834,151 @@ console.log(money > price);  // true
 console.log("10" > "2"); // false
 console.log(10 > 2);     // true
 
+Part E]: Increment / Decrement Operators (++ / --)
+Part a:
+A counter starts at 5. Use the increment operator to increase it by 1 and print the new value.
+A player has 3 lives. Use the decrement operator to reduce one life and print the remaining lives.
+Start with score = 10. Increase the score using ++ and print it.
+Start with items = 8. Decrease the items using -- and print it.
+Declare count = 0. Increment it twice and print the final value.
+
+Answer:
+1.
+let x = 5 ;
+x++;
+console.log(x);
+
+2.
+let lives = 3;
+lives--;
+console.log(lives);
+
+3.
+let score = 10;
+score++;
+console.log(score);
+
+4.
+let items = 8;
+items--;
+console.log(items);
+
+5.
+let count = 0;
+count++;
+count++;
+console.log(count);
+
+Part b:
+Start with x = 5.
+
+Create y = x++
+Print both x and y.
+Explain why the values are different.
+Start with a = 5.
+
+Create b = ++a
+Print both a and b.
+Explain the difference from the previous question.
+Start with lives = 3.
+
+Use post-decrement (lives--) and store the result in previousLives.
+Print both variables.
+Start with attempts = 0.
+
+Use pre-increment (++attempts) and store the result in currentAttempts.
+Print both variables.
+Start with points = 100.
+
+Increase it using ++
+Then decrease it using --
+Print the final value.
+
+Answer:
+6.
+let x = 5;
+let y = x++;
+console.log(x,y)
+
+7.
+let a = 5;
+let b = ++a;
+console.log(a,b);
+
+8.
+let lives = 3;
+let previousLives = lives--;
+console.log(lives , previousLives);
+
+9.
+let attempts = 0;
+let currentAttempts = ++attempts;
+console.log(attempts , currentAttempts);
+
+10.
+let points = 100;
+points++;
+points--;
+console.log(points)
+
+Part c:
+Predict the output:
+
+let x = 10;
+let y = x++;
+let z = ++x;
+console.log(x, y, z);
+Predict the output:
+
+let a = 5;
+let b = a-- + ++a;
+console.log(a, b);
+Predict the output:
+
+let m = 7;
+let n = --m + m++;
+console.log(m, n);
+Predict the output:
+
+let p = 3;
+let q = p++ + ++p + p;
+console.log(p, q);
+Predict the output:
+
+let val = 0;
+val = val++ + ++val;
+console.log(val);
+
+Answer:
+11.
+let x = 10;
+let y = x++;
+let z = ++x;
+console.log(x, y, z);  // 12 10 12
+
+12.
+let a = 5;
+let b = a-- + ++a;
+console.log(a, b);   //5 10
+
+13.
+let m = 7;
+let n = --m + m++;
+console.log(m, n);   //7 12
+
+14.
+let p = 3;
+let q = p++ + ++p + p;
+console.log(p, q);   //5 13
+
+15.
+let val = 0;
+val = val++ + ++val;
+console.log(val);   //2
+
+
+
+
 
 
 
