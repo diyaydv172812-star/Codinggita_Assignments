@@ -1113,6 +1113,206 @@ console.log(val); // 5
 let x = "" || 0 || false || null || undefined || "OK";
 console.log(x); // Ok
 
+3. Logical NOT !
+Write a JavaScript program for each:
+
+A user is not banned (isBanned = false). Check if they can login by negating isBanned using !.
+A task is not completed (isCompleted = false). Check if it is still pending using !.
+A light is on (isOn = true). Check if it is off using !.
+A subscription is not active (isActive = false). Check if the user cannot access premium content using !.
+A file is not read‑only (isReadOnly = false). Check if it can be edited using !
+
+Answer:
+1.
+let isBanned = false;
+console.log(!isBanned);
+
+2.
+let isCompleted = false;
+console,log(!isCompleted);
+
+3.
+let isOn = true;
+console.log(!isOn)
+
+4.
+let isActive = false;
+console.log(!isActive)
+
+5.
+let isReadOnly = false;
+console.log(isReadOnly);
+
+Additional Questions (Logical NOT !)
+Predict the output:
+
+let a = 0;
+let b = 1;
+console.log(!a, !b);
+Predict the output:
+
+let x = "Hello";
+let y = "";
+console.log(!x, !y);
+Predict the output:
+
+let val = 5;
+let result = !val;
+console.log(result);
+Predict the output:
+
+let a = 10;
+let b = 20;
+let result = !(a && b);
+console.log(result);
+Predict the output:
+
+let x = 0;
+let y = 1;
+let result = !(x || y);
+console.log(result);
+
+Answer:
+// 6.
+// true false
+
+// 7.
+// false true
+
+8.
+false
+
+9.
+false
+
+10.
+false
+
+Part G]: typeof Operator
+Part a:
+Declare a variable name = "Rahul" and print its type using typeof.
+Declare a variable age = 25 and print its type.
+Declare a variable isStudent = true and print its type.
+Declare a variable city (without assigning a value) and print its type.
+Print the type of the value null.
+
+Answer:
+1.
+let name ="Rahul"
+console.log(typeof name)
+
+2.
+let age = 25;
+console.log(typeof age)
+
+3.
+let isStudent = true
+console.log(typeof isStudent)
+
+4.
+let city
+console.log(typeof city)
+
+5.
+console.log(typeof null)
+
+Part b:
+Predict the output:
+
+console.log(typeof 42);
+console.log(typeof "Hello");
+console.log(typeof true);
+console.log(typeof undefined);
+Predict the output:
+
+console.log(typeof null);
+console.log(typeof {});
+console.log(typeof []);
+Predict the output:
+
+console.log(typeof NaN);
+console.log(typeof Infinity);
+console.log(typeof function(){});
+Create three variables:
+
+price = 99.99
+message = "Welcome"
+isActive = false
+Print the type of each variable with a clear message.
+Predict the output:
+
+let value = null;
+console.log(typeof value);
+console.log(typeof value === "object");
+
+Answer:
+// 6.
+// number
+// string
+// boolean
+// undefined
+
+// 7.
+// object
+// object
+// object
+
+// 8.
+// number
+// number
+// function
+
+// 9.
+// let price = 99.99
+// let message = "Welcome"
+// let isActive = false
+// console.log(typeof price)
+// concole.log(typeof message)
+// console.log(typeof isActive)
+
+10.
+object
+true
+
+Part c:
+Predict the output:
+
+console.log(typeof typeof 100);
+console.log(typeof typeof "Hi");
+console.log(typeof typeof true);
+Predict the output:
+
+let a = 10;
+let b = "10";
+console.log(typeof a === typeof b);
+console.log(typeof a == typeof b);
+Predict the output:
+
+console.log(typeof null === "object");
+console.log(typeof [] === "object");
+console.log(typeof {} === "object");
+Predict the output:
+
+let x;
+console.log(typeof x);
+x = null;
+console.log(typeof x);
+x = 0;
+console.log(typeof x);
+Predict the output:
+
+console.log(typeof NaN === "number");
+console.log(typeof Infinity === "number");
+console.log(typeof (1 / 0));
+
+Answer:
+
+
+
+
+
+
+
 
 
 
