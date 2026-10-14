@@ -1306,6 +1306,323 @@ console.log(typeof Infinity === "number");
 console.log(typeof (1 / 0));
 
 Answer:
+11.
+string
+string
+string
+
+12.
+false
+false
+
+13.
+true
+true
+true
+
+14.
+undefined
+object
+number
+
+15.
+true
+true
+number
+
+Part H]: Type Coercion
+Part a:
+Convert the string "25" into a number using Number() and add 10 to it. Print the result.
+Convert the number 100 into a string using String() and join it with " rupees". Print the result.
+Convert the value 0 into a boolean using Boolean() and print it.
+Convert the value "Hello" into a boolean and print it.
+Use the unary + operator to convert "50" into a number and multiply it by 2.
+
+Answer:
+
+1.
+let a = Number("25");
+console.log(a + 10);
+
+2.
+let a = String(100);
+console.log(a + " rupees");
+
+3.
+console.log(Boolean(0));
+
+4.
+console.log(Boolean("Hello"));
+
+5.
+let a = +"50";
+console.log(a * 2);
+
+Part b:
+Predict the output:
+
+console.log("10" - 5);
+console.log("10" + 5);
+console.log("10" * 2);
+console.log("10" / 2);
+Predict the output:
+
+console.log("5" - "2");
+console.log("5" + "2");
+console.log("5" * "2");
+console.log("5" / "2");
+Predict the output:
+
+console.log(Number("123"));
+console.log(Number("123abc"));
+console.log(Number(true));
+console.log(Number(false));
+console.log(Number(null));
+console.log(Number(undefined));
+Predict the output:
+
+console.log(Boolean(0));
+console.log(Boolean(""));
+console.log(Boolean("0"));
+console.log(Boolean([]));
+console.log(Boolean({}));
+console.log(Boolean(null));
+Predict the output:
+
+console.log(String(100));
+console.log(String(true));
+console.log(String(null));
+console.log(String(undefined));
+console.log(100 + "");
+
+Answer:
+6.
+5
+105
+20
+5
+
+7.
+3
+52
+10
+2.5
+
+8.
+123
+NaN
+1
+0
+0
+NaN
+
+9.
+false
+false
+true
+true
+true
+false
+
+10.
+100
+true
+null
+undefined
+100
+
+Part c:
+Predict the output:
+
+console.log("5" + 3 + 2);
+console.log(5 + 3 + "2");
+console.log("5" - 3 + 2);
+console.log(5 - "3" + "2");
+Predict the output:
+
+console.log(true + true);
+console.log(true + false);
+console.log(true + "false");
+console.log(false + "true");
+Predict the output:
+
+console.log(null + 5);
+console.log(undefined + 5);
+console.log(null + "5");
+console.log(undefined + "5");
+Predict the output:
+
+console.log([] + []);
+console.log([] + {});
+console.log({} + []);
+console.log({} + {});
+Predict the output:
+
+let a = "10";
+let b = 5;
+let c = a + b;
+let d = a - b;
+let e = +a + b;
+console.log(c, typeof c);
+console.log(d, typeof d);
+console.log(e, typeof e);
+Predict the output:
+
+console.log(!!"Hello");
+console.log(!!"");
+console.log(!!0);
+console.log(!!1);
+console.log(!!null);
+console.log(!!undefined);
+Predict the output:
+
+console.log(Number(""));
+console.log(Number(" "));
+console.log(Number("0"));
+console.log(Number("  25  "));
+console.log(Number("25px"));
+Predict the output:
+
+let val1 = "5";
+let val2 = 2;
+console.log(val1 + val2);
+console.log(+val1 + val2);
+console.log(val1 - val2);
+console.log(val1 * val2);
+console.log(val1 / val2);
+
+Answer:
+11.
+532
+82
+4
+22
+
+12.
+2
+1
+truefalse
+falsetrue
+
+13.
+5
+NaN
+null5
+undefined5
+
+14.
+[object Object]
+[object Object]
+[object Object][object Object]
+
+15.
+105 string
+5 number
+15 number
+
+16.
+true
+false
+false
+true
+false
+false
+
+17.
+0
+0
+0
+25
+NaN
+
+18.
+52
+7
+3
+10
+2.5
+
+Bonus Mixed Practice Questions:
+Predict the output:
+
+let count = 5;
+console.log(typeof count++);
+console.log(count);
+console.log(typeof ++count);
+console.log(count);
+Predict the output:
+
+let x = "10";
+let y = ++x;
+console.log(x, y, typeof x, typeof y);
+Predict the output:
+
+let a = "5";
+let b = a++;
+console.log(a, b, typeof a, typeof b);
+Predict the output:
+
+console.log(typeof (1 + "2"));
+console.log(typeof (1 - "2"));
+console.log(typeof (1 * "2"));
+console.log(typeof (1 / "2"));
+Predict the output:
+
+let val = null;
+console.log(typeof val);
+console.log(val + 1);
+console.log(val - 1);
+console.log(val * 1);
+console.log(Boolean(val));
+
+Answer:
+19.
+number
+6
+number
+7
+
+20.
+11 11 number number
+
+21.
+6 5 number number
+
+22.
+string
+number
+number
+number
+
+23.
+object
+1
+-1
+0
+false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
