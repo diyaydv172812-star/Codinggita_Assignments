@@ -501,6 +501,448 @@ if (present == true) {
     }
 }
 
+E] switch Statement – 10 Questions
+Write a program that takes a month number (1–12) and prints the number of days in that month using switch
+(Hint: Consider 28/29 for February as 28 for simplicity).
+
+Write a program that checks a character and prints whether it is a vowel or consonant using switch.
+
+Create a program that takes a number from 1 to 4 and prints the season using multiple cases together:
+1 or 2 → Winter
+3 or 4 → Summer
+
+Write a program using switch (true) to assign class based on marks:
+≥ 75 → Distinction
+≥ 60 → 1st class
+≥ 50 → 2nd class
+≥ 35 → 3rd class
+below 35 → Failed
+
+Create a nested switch program:
+First take a role (“admin” or “user”).
+If role is “admin”, then take an action (“create”, “edit”, “delete”) and print the corresponding message.
+If role is “user”, print “Limited Access”.
+
+Predict and explain the output of the following code. Then correct it so that only one message is printed:
+
+let fruit = "mango";
+
+switch (fruit) {
+  case "apple":
+    console.log("Apple is red");
+  case "mango":
+    console.log("Mango is yellow");
+  case "banana":
+    console.log("Banana is yellow");
+  default:
+    console.log("Unknown fruit");
+}
+Write a program that takes a value which can be either a number or a string (0, "0", false, null, undefined) and uses switch to correctly identify each one. Explain why some values may not match as expected.
+
+Create a tricky calculator using switch that supports these operations:
++, -, *, /, %, and also ** (exponentiation).
+Handle division by zero properly inside the corresponding case.
+
+Write a program using switch that takes a date (day number of the month) and prints:
+“Beginning of the month” (1–10)
+“Middle of the month” (11–20)
+“End of the month” (21–31)
+Use switch (true) technique for range checking.
+
+Create a multi-level nested switch program for an online food ordering system:
+First select Category: "veg" or "nonveg".
+Then select Item based on category.
+Finally select Size: "half" or "full" and print the final order summary with price.
+
+Answer:
+1.
+let monthNumber=7;
+switch(monthNumber){
+    case 1:
+        console.log("January");
+        break;
+    case 2:
+        console.log("Febraury");
+        break;
+    case 3:
+        console.log("March");
+        break;
+    case 4:
+        console.log("April");
+        break;
+    case 5:
+        console.log("May");
+        break;
+    case 6:
+        console.log("June");
+        break;
+    case 7:
+        console.log("July");
+        break;
+    case 8:
+        console.log("August");
+        break;
+    case 9:
+        console.log("September");
+        break;
+    case 10:
+        console.log("October");
+        break;
+    case 11:
+        console.log("November");
+        break;
+    case 12:
+        console.log("December");
+        break;
+    default:
+        console.log("Invalid month!")
+}
+
+2.
+let ch = a;
+switch(ch){
+    case "a":
+    case "e":
+    case "i":
+    case "o":
+    case "u":
+        console.log("Vowel");
+        break;
+    default:
+        console.log("Consonant");
+}
+
+3.
+let num=3;
+switch(num){
+    case 1:
+    case 2:
+        console.log("Winter")
+        break;
+    case 3:
+    case 4:
+        console.log("Summer")
+        break;
+    default:
+        console.log("Invalid Number")
+}
+
+4.
+let marks = 35
+switch (true) {
+    case marks >= 75:
+        console.log("Distinction");
+        break;
+    case marks >= 60:
+        console.log("1st class");
+        break;
+    case marks >= 50:
+        console.log("2nd class");
+        break;
+    case marks >= 35:
+        console.log("3rd class");
+        break;
+    default:
+        console.log("Failed");
+}
+
+
+5.
+let role="admin";
+switch(role){
+    case "admin":
+    let action="edit";
+        switch(action){
+            case "create":
+                console.log("Admin can create");
+                break;
+            case "edit":
+                console.log("admin can edit");
+                break;
+            case "delete":
+                console.log("admin can delete");
+                break;
+        }
+        break;
+    case "user":
+        console.log("Limited Access");
+        break;
+}
+
+6.
+The output is:
+Apple is red
+Mango is yellow
+Banana is yellow
+Unknown fruit
+because in this code break is missing so it prints all the output.
+let fruit = "mango";
+
+switch (fruit) {
+  case "apple":
+    console.log("Apple is red");
+    break;
+  case "mango":
+    console.log("Mango is yellow");
+    break;
+  case "banana":
+    console.log("Banana is yellow");
+    break;
+  default:
+    console.log("Unknown fruit");
+    break;
+}
+
+7.
+let value = 0;
+
+switch (value) {
+    case 0:
+        console.log("Number 0");
+        break;
+    case "0":
+        console.log("String 0");
+        break;
+    case false:
+        console.log("False");
+        break;
+    case null:
+        console.log("Null");
+        break;
+    case undefined:
+        console.log("Undefined");
+        break;
+    default:
+        console.log("Unknown value");
+}
+
+8.
+let a = 10, b = 0;
+let op = "/";
+switch (op) {
+    case "+":
+        console.log(a + b);
+        break;
+    case "-":
+        console.log(a - b);
+        break;
+    case "*":
+        console.log(a * b);
+        break;
+    case "/":
+        if (b === 0)
+            console.log("Cannot divide by zero");
+        else
+            console.log(a / b);
+        break;
+    case "%":
+        if (b === 0)
+            console.log("Cannot use modulo with zero");
+        else
+            console.log(a % b);
+        break;
+    case "**":
+        console.log(a ** b);
+        break;
+    default:
+        console.log("Invalid operator");
+}
+
+9.
+let day = 15;
+
+switch (true) {
+    case (day >= 1 && day <= 10):
+        console.log("Beginning of the month");
+        break;
+    case (day >= 11 && day <= 20):
+        console.log("Middle of the month");
+        break;
+    case (day >= 21 && day <= 31):
+        console.log("End of the month");
+        break;
+    default:
+        console.log("Invalid day");
+}
+
+10.
+let category = "veg";
+let item = "paneer";
+let size = "full";
+let price = 0;
+
+switch (category) {
+    case "veg":
+        switch (item) {
+            case "paneer":
+                switch (size) {
+                    case "half":
+                        price = 120;
+                        break;
+                    case "full":
+                        price = 200;
+                        break;
+                    default:
+                        console.log("Invalid size");
+                }
+                break;
+
+            case "pizza":
+                switch (size) {
+                    case "half":
+                        price = 150;
+                        break;
+                    case "full":
+                        price = 250;
+                        break;
+                    default:
+                        console.log("Invalid size");
+                }
+                break;
+
+            default:
+                console.log("Invalid veg item");
+        }
+        break;
+
+    case "nonveg":
+        switch (item) {
+            case "chicken":
+                switch (size) {
+                    case "half":
+                        price = 180;
+                        break;
+                    case "full":
+                        price = 300;
+                        break;
+                    default:
+                        console.log("Invalid size");
+                }
+                break;
+
+            case "fish":
+                switch (size) {
+                    case "half":
+                        price = 200;
+                        break;
+                    case "full":
+                        price = 350;
+                        break;
+                    default:
+                        console.log("Invalid size");
+                }
+                break;
+
+            default:
+                console.log("Invalid nonveg item");
+        }
+        break;
+
+    default:
+        console.log("Invalid category");
+}
+
+if (price > 0) {
+    console.log("Category:", category);
+    console.log("Item:", item);
+    console.log("Size:", size);
+    console.log("Total Price: ₹" + price);
+}
+
+F] Ternary Operator Questions
+Write a ternary operator to check whether a given number is divisible by 7. If yes, return "Divisible by 7", otherwise "Not Divisible by 7".
+
+Using ternary operator, check if the temperature is greater than or equal to 30. Return "Hot Day" or "Pleasant Day".
+
+Write a ternary expression that checks if a string is empty. Return "Empty String" if it is empty, otherwise "String has content".
+
+Using nested ternary, check a person’s age and return:
+
+"Child" (age < 13)
+"Teenager" (13–19)
+"Adult" (20 and above)
+Write a nested ternary to find the greater of three numbers (a, b, c) without using Math.max.
+
+Create a nested ternary that classifies a student’s marks as:
+
+"Distinction" (≥ 75)
+"First Class" (60–74)
+"Second Class" (50–59)
+"Pass" (35–49)
+"Fail" (< 35)
+Write a single nested ternary expression that returns one of the following based on a number:
+"Positive Even", "Positive Odd", "Negative Even", "Negative Odd", or "Zero".
+
+Using only nested ternary operators, implement the full leap year logic
+(divisible by 4 and (not divisible by 100 or divisible by 400)) and return "Leap Year" or "Not a Leap Year".
+
+Convert the following decision tree into one single nested ternary expression:
+
+if (role === "admin") {
+  if (action === "delete") → "Admin Delete"
+  else if (action === "edit") → "Admin Edit"
+  else → "Admin Other"
+} else if (role === "user") {
+  if (action === "view") → "User View"
+  else → "User Restricted"
+} else {
+  → "Invalid Role"
+}
+Write a complex nested ternary that calculates discount and final amount based on these rules:
+
+Cart total ≥ 5000 → 20% discount
+Cart total ≥ 2000 → 10% discount
+Cart total ≥ 1000 → 5% discount
+Otherwise → 0% discount
+Return both the discount percentage and the final payable amount in a single expression (you may return an object or a formatted string).
+
+Answer:
+1.
+let num=49;
+console.log(num%7==0 ? "Divisible by 7" : "Not Divisible by 7");
+
+2.
+let temp=35;
+console.log(temp>=30 ? "Pleasant Day" : "Hot Day")
+
+3.
+let value = " "
+console.log(value==" " ? "Empty String" : "String has content")
+
+4.
+let age = 17;
+console.log(age<13 ? "Child" : age<=19 ? "Teenager" : "Adult");
+
+5.
+let a=10,b=20,c=30;
+console.log(a>b ? (a>c ? a:c) : (b > c ? b : c));
+
+6.
+let marks = 45;
+console.log(marks>=75 ? "Distinction" : marks>=60 ? "First Class" : marks>=50 ? "Second Class" : marks>=35 ? "Pass" : "Fail")
+
+7.
+let n = -5;
+console.log(n === 0 ? "Zero" : n > 0 ? (n % 2 === 0 ? "Positive Even" : "Positive Odd") : (n % 2 === 0 ? "Negative Even" : "Negative Odd"));
+
+8.
+let year = 2024;
+console.log(year % 4 === 0 ? (year % 100 === 0 ? (year % 400 === 0 ? "Leap Year" : "Not a Leap Year") : "Leap Year") : "Not a Leap Year");
+
+9.
+let role = "admin", action = "delete";
+console.log(role === "admin" ? (action === "delete" ? "Admin Delete" : action === "edit" ? "Admin Edit" : "Admin Other") : role === "user" ? (action === "view" ? "User View" : "User Restricted") : "Invalid Role");
+
+10.
+let total = 3000;
+let result = {
+    discount: total >= 5000 ? 20 : total >= 2000 ? 10 : total >= 1000 ? 5 : 0,
+    payable: total * (1 - (total >= 5000 ? 0.20 : total >= 2000 ? 0.10 : total >= 1000 ? 0.05 : 0))
+};
+console.log(result);
+
+
+
 
 
 
