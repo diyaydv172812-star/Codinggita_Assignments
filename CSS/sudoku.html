@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku and Answer Boards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .board-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .sudoku-grid {
+            display: grid;
+            grid-template-columns: repeat(9, minmax(30px, 45px));
+            grid-template-rows: repeat(9, minmax(30px, 45px));
+            border: 3px solid #000;
+            background-color: #000;
+            gap: 1px;
+
+            
+        }
+
+        .cell {
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: normal;
+            color: #111;
+        }
+
+
+        .c4r1,
+        .c5r1,
+        .c6r1,
+        .c4r2,
+        .c5r2,
+        .c6r2,
+        .c4r3,
+        .c5r3,
+        .c6r3,
+
+        .c1r4,
+        .c2r4,
+        .c3r4,
+        .c1r5,
+        .c2r5,
+        .c3r5,
+        .c1r6,
+        .c2r6,
+        .c3r6,
+      
+        .c7r4,
+        .c8r4,
+        .c9r4,
+        .c7r5,
+        .c8r5,
+        .c9r5,
+        .c7r6,
+        .c8r6,
+        .c9r6,
+      
+        .c4r7,
+        .c5r7,
+        .c6r7,
+        .c4r8,
+        .c5r8,
+        .c6r8,
+        .c4r9,
+        .c5r9,
+        .c6r9 {
+            background-color: #f0ccef;
+           
+        }
+
+    
+        @media (max-width: 600px) {
+            .sudoku-grid {
+                grid-template-columns: repeat(9, 32px);
+                grid-template-rows: repeat(9, 32px);
+            }
+
+            .cell {
+                font-size: 15px;
+            }
+
+            .wrapper {
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+      
+        <div class="board-container">
+            <div class="title">SUDOKU</div>
+            <div class="sudoku-grid">
+               
+
+                <div class="cell c1r1">8</div>
+                <div class="cell c2r1"></div>
+                <div class="cell c3r1">6</div>
+                <div class="cell c4r1"></div>
+                <div class="cell c5r1"></div>
+                <div class="cell c6r1">3</div>
+                <div class="cell c7r1"></div>
+                <div class="cell c8r1">9</div>
+                <div class="cell c9r1"></div>
+              
+
+                <div class="cell c1r2"></div>
+                <div class="cell c2r2">4</div>
+                <div class="cell c3r2"></div>
+                <div class="cell c4r2"></div>
+                <div class="cell c5r2">1</div>
+                <div class="cell c6r2"></div>
+                <div class="cell c7r2"></div>
+                <div class="cell c8r2">6</div>
+                <div class="cell c9r2">8</div>
+             
+
+                <div class="cell c1r3">2</div>
+                <div class="cell c2r3"></div>
+                <div class="cell c3r3"></div>
+                <div class="cell c4r3">8</div>
+                <div class="cell c5r3">7</div>
+                <div class="cell c6r3"></div>
+                <div class="cell c7r3"></div>
+                <div class="cell c8r3"></div>
+                <div class="cell c9r3">5</div>
+               
+
+                <div class="cell c1r4">1</div>
+                <div class="cell c2r4"></div>
+                <div class="cell c3r4">8</div>
+                <div class="cell c4r4"></div>
+                <div class="cell c5r4"></div>
+                <div class="cell c6r4">5</div>
+                <div class="cell c7r4"></div>
+                <div class="cell c8r4">2</div>
+                <div class="cell c9r4"></div>
+              
+
+                <div class="cell c1r5"></div>
+                <div class="cell c2r5">3</div>
+                <div class="cell c3r5"></div>
+                <div class="cell c4r5">1</div>
+                <div class="cell c5r5"></div>
+                <div class="cell c6r5"></div>
+                <div class="cell c7r5"></div>
+                <div class="cell c8r5">5</div>
+                <div class="cell c9r5"></div>
+              
+
+                <div class="cell c1r6">7</div>
+                <div class="cell c2r6"></div>
+                <div class="cell c3r6">5</div>
+                <div class="cell c4r6"></div>
+                <div class="cell c5r6">3</div>
+                <div class="cell c6r6"></div>
+                <div class="cell c7r6">9</div>
+                <div class="cell c8r6"></div>
+                <div class="cell c9r6"></div>
+             
+
+                <div class="cell c1r7"></div>
+                <div class="cell c2r7">2</div>
+                <div class="cell c3r7">1</div>
+                <div class="cell c4r7"></div>
+                <div class="cell c5r7"></div>
+                <div class="cell c6r7">7</div>
+                <div class="cell c7r7"></div>
+                <div class="cell c8r7">4</div>
+                <div class="cell c9r7"></div>
+              
+
+                <div class="cell c1r8">6</div>
+                <div class="cell c2r8"></div>
+                <div class="cell c3r8"></div>
+                <div class="cell c4r8"></div>
+                <div class="cell c5r8">2</div>
+                <div class="cell c6r8"></div>
+                <div class="cell c7r8">8</div>
+                <div class="cell c8r8"></div>
+                <div class="cell c9r8"></div>
+            
+
+                <div class="cell c1r9"></div>
+                <div class="cell c2r9">8</div>
+                <div class="cell c3r9">7</div>
+                <div class="cell c4r9">6</div>
+                <div class="cell c5r9"></div>
+                <div class="cell c6r9">4</div>
+                <div class="cell c7r9"></div>
+                <div class="cell c8r9"></div>
+                <div class="cell c9r9">3</div>
+            </div>
+        </div>
+
+        
+
+
+        <div class="board-container">
+            <div class="title">ANSWER</div>
+            <div class="sudoku-grid">
+             
+
+                <div class="cell c1r1">8</div>
+                <div class="cell c2r1">7</div>
+                <div class="cell c3r1">6</div>
+                <div class="cell c4r1">5</div>
+                <div class="cell c5r1">4</div>
+                <div class="cell c6r1">3</div>
+                <div class="cell c7r1">1</div>
+                <div class="cell c8r1">9</div>
+                <div class="cell c9r1">2</div>
+              
+
+                <div class="cell c1r2">5</div>
+                <div class="cell c2r2">4</div>
+                <div class="cell c3r2">3</div>
+                <div class="cell c4r2">2</div>
+                <div class="cell c5r2">1</div>
+                <div class="cell c6r2">9</div>
+                <div class="cell c7r2">7</div>
+                <div class="cell c8r2">6</div>
+                <div class="cell c9r2">8</div>
+             
+
+                <div class="cell c1r3">2</div>
+                <div class="cell c2r3">1</div>
+                <div class="cell c3r3">9</div>
+                <div class="cell c4r3">8</div>
+                <div class="cell c5r3">7</div>
+                <div class="cell c6r3">6</div>
+                <div class="cell c7r3">4</div>
+                <div class="cell c8r3">3</div>
+                <div class="cell c9r3">5</div>
+              
+
+                <div class="cell c1r4">1</div>
+                <div class="cell c2r4">9</div>
+                <div class="cell c3r4">8</div>
+                <div class="cell c4r4">7</div>
+                <div class="cell c5r4">6</div>
+                <div class="cell c6r4">5</div>
+                <div class="cell c7r4">3</div>
+                <div class="cell c8r4">2</div>
+                <div class="cell c9r4">4</div>
+         
+
+                <div class="cell c1r5">4</div>
+                <div class="cell c2r5">3</div>
+                <div class="cell c3r5">2</div>
+                <div class="cell c4r5">1</div>
+                <div class="cell c5r5">9</div>
+                <div class="cell c6r5">8</div>
+                <div class="cell c7r5">6</div>
+                <div class="cell c8r5">5</div>
+                <div class="cell c9r5">7</div>
+             
+
+                <div class="cell c1r6">7</div>
+                <div class="cell c2r6">6</div>
+                <div class="cell c3r6">5</div>
+                <div class="cell c4r6">4</div>
+                <div class="cell c5r6">3</div>
+                <div class="cell c6r6">2</div>
+                <div class="cell c7r6">9</div>
+                <div class="cell c8r6">8</div>
+                <div class="cell c9r6">1</div>
+              
+
+                <div class="cell c1r7">3</div>
+                <div class="cell c2r7">2</div>
+                <div class="cell c3r7">1</div>
+                <div class="cell c4r7">9</div>
+                <div class="cell c5r7">8</div>
+                <div class="cell c6r7">7</div>
+                <div class="cell c7r7">5</div>
+                <div class="cell c8r7">4</div>
+                <div class="cell c9r7">6</div>
+              
+
+                <div class="cell c1r8">6</div>
+                <div class="cell c2r8">5</div>
+                <div class="cell c3r8">4</div>
+                <div class="cell c4r8">3</div>
+                <div class="cell c5r8">2</div>
+                <div class="cell c6r8">1</div>
+                <div class="cell c7r8">8</div>
+                <div class="cell c8r8">7</div>
+                <div class="cell c9r8">9</div>
+               
+
+                <div class="cell c1r9">9</div>
+                <div class="cell c2r9">8</div>
+                <div class="cell c3r9">7</div>
+                <div class="cell c4r9">6</div>
+                <div class="cell c5r9">5</div>
+                <div class="cell c6r9">4</div>
+                <div class="cell c7r9">2</div>
+                <div class="cell c8r9">1</div>
+                <div class="cell c9r9">3</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

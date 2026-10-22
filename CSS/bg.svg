@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" width="100%" height="100%">
+  <defs>
+    <!-- Night Sky Gradient -->
+    <linearGradient id="skyGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#05101a" />
+      <stop offset="60%" stop-color="#0b1b2a" />
+      <stop offset="100%" stop-color="#142634" />
+    </linearGradient>
+
+    <!-- Stadium Floodlight Glow -->
+    <radialGradient id="stadiumGlow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#1e3b50" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#0b1b2a" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0b1b2a" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Outfield Grass Gradient -->
+    <radialGradient id="fieldGrad" cx="50%" cy="100%" r="75%">
+      <stop offset="0%" stop-color="#215c23" />
+      <stop offset="45%" stop-color="#18471c" />
+      <stop offset="80%" stop-color="#103215" />
+      <stop offset="100%" stop-color="#0b220e" />
+    </radialGradient>
+  </defs>
+
+  <!-- 1. Sky Base -->
+  <rect width="1000" height="550" fill="url(#skyGrad)" />
+  <rect width="1000" height="400" fill="url(#stadiumGlow)" />
+
+  <!-- 2. Distant Stadium Stands / Roof Structure -->
+  <!-- Upper tier curve -->
+  <path d="M 0,180 Q 500,240 1000,180 L 1000,380 L 0,380 Z" fill="#0c1822" opacity="0.85" />
+
+  <!-- Lower tier / Seating band -->
+  <path d="M 0,225 Q 500,275 1000,225 L 1000,390 L 0,390 Z" fill="#11222e" opacity="0.9" />
+
+  <!-- Stadium Boundary Wall / Ring Railing -->
+  <path d="M 0,345 Q 500,370 1000,345 L 1000,410 L 0,410 Z" fill="#1b2f3a" />
+  <path d="M 0,358 Q 500,380 1000,358 L 1000,410 L 0,410 Z" fill="#253c48" />
+
+  <!-- 3. Pitch / Ground Perspective -->
+  <!-- Center pitch apron / outfield boundary line -->
+  <polygon points="460,365 540,365 570,410 430,410" fill="#2e4652" opacity="0.4" />
+
+  <!-- 4. Grass Outfield Curve -->
+  <path d="M 0,395 Q 500,360 1000,395 L 1000,550 L 0,550 Z" fill="url(#fieldGrad)" />
+
+  <!-- Subtle mowing stripe / inner ring highlight -->
+  <path d="M 0,455 Q 500,425 1000,455 L 1000,550 L 0,550 Z" fill="#ffffff" opacity="0.04" />
+</svg>

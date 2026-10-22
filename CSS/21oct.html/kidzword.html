@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo{
+            display: flex;
+            /* gap: 10px; */
+        }
+        .logo p{
+            margin-top: 0;
+        }
+        .bg{
+            height: 60vh;
+            width: 100vw;
+            background-image: url(kw-background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bg h1{
+            font-size: 80px;
+            color: white;
+            margin-left: 50px;
+            margin-top:0px;
+        }
+        .bg p{
+            font-weight: bolder;
+            color: white;
+            margin-left: 50px;
+            font-size: 20px;
+        }
+        .first{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 20px;
+            
+        } 
+        .text1{
+            font-weight: bolder;
+            font-size: larger;
+        }
+        .end{
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        button{
+            border: 2px solid rgb(50, 149, 188);
+            background-color: rgb(50, 149, 188);
+            color: white;
+            display: flex;
+            height: fit-content;
+            padding: 5px;
+            gap: 2px;
+            font-size: 20px;
+        }
+        .end h6{
+            font-size: 20px;
+            font-weight: bolder;
+            margin-top: 10px;
+        }
+        .bookmain p{
+            margin-top: 0;
+            margin-left: 5px;
+        }
+        .main1,.main2{
+            margin-top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+        <img src="kw-logo.png" alt="" height="30px">
+        </div>
+        <div class="logo">
+            <img src="cart-icon.png" alt="" height="20px" width="20px">
+            <p>Cart items(0)</p>
+        </div>
+    </nav>
+    <div class="bg">
+        <h1>Shop.<br>Have Fun.<br>Repeat.</h1>
+        <p>#NewAndNow</p>
+    </div>
+    <div class="main">
+        <h3>Discover New Books</h3>
+        <div class="first">
+            <div class="book1">
+                <div class="bookmain">
+                    <div class="image">
+                        <img src="book1.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">This was our pact</p>
+                    <p class="text2">Ryan Andrew</p>
+                </div>
+                    <div class="end">
+                        <h6>$7.49</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book2">
+                <div class="bookmain">
+                    <div class="image">
+                        <img src="book2.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">The famous Five</p>
+                    <p class="text2">Guild Blyton</p>
+                </div>
+                    <div class="end">
+                        <h6>$4.59</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book3">
+                <div class="bookmain">
+                    <div class="image">
+                        <img src="book3.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Matilda</p>
+                    <p class="text2">Roald Dahi</p>
+                </div>
+                    <div class="end">
+                        <h6>$6.80</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book4">
+                <div class="bookmain">
+                    <div class="image">
+                        <img src="book4.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Harry Potter</p>
+                    <p class="text2">Jk Rowling</p>
+                </div>
+                    <div class="end">
+                        <h6>$10</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book5">
+                <div class="bookmain">
+                    <div class="image">
+                        <img src="book5.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">For Young Readers</p>
+                    <p class="text2">Ruskin Bond</p>
+                </div>
+                    <div class="end">
+                        <h6>$7.29</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book6">
+                <div class="bookmain">
+                    <div class="image">
+                        <img src="book6.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">WimpyKid - Diy</p>
+                    <p class="text2">Jeff Kinney</p>
+                </div>
+                    <div class="end">
+                        <h6>$4.99</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="main1">
+        <h3>Discover New Games</h3>
+        <div class="first">
+            <div class="book1">
+                <div class="bookmain">
+                    <div class="card1">
+                        <img src="dart-board.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Dart Board</p>
+                    <p class="text2">Wooden board,16 inches</p>
+                </div>
+                    <div class="end">
+                        <h6>$17.49</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book2">
+                <div class="bookmain">
+                    <div class="card2">
+                        <img src="connect-four.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Connect 4</p>
+                    <p class="text2">Board game,multiplayer</p>
+                </div>
+                    <div class="end">
+                        <h6>$19.99</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book3">
+                <div class="bookmain">
+                    <div class="card3">
+                        <img src="jenga.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Jenga</p>
+                    <p class="text2">Wooden blocks,54 pieces</p>
+                </div>
+                    <div class="end">
+                        <h6>$20.99</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book4">
+                <div class="bookmain">
+                    <div class="card4">
+                        <img src="monopoly.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Monopoly</p>
+                    <p class="text2">1.61 x 15.75 x10.51 inches</p>
+                </div>
+                    <div class="end">
+                        <h6>$19.49</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+    </div>
+    <div class="main2">
+        <h3>Handmade with love</h3>
+        <div class="first">
+            <div class="book1">
+                <div class="bookmain">
+                    <div class="card1">
+                        <img src="bookmarks.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Bookmarks</p>
+                    <p class="text2">Handmade with love</p>
+                </div>
+                    <div class="end">
+                        <h6>$12.49</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book2">
+                <div class="bookmain">
+                    <div class="card2">
+                        <img src="birthday-card.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Birthday Card</p>
+                    <p class="text2">Handmade with love</p>
+                </div>
+                    <div class="end">
+                        <h6>$19.99</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book3">
+                <div class="bookmain">
+                    <div class="card3">
+                        <img src="stuffed-toy.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Stuffed toys</p>
+                    <p class="text2">Handmade with love</p>
+                </div>
+                    <div class="end">
+                        <h6>$15.99</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+            <div class="book4">
+                <div class="bookmain">
+                    <div class="card4">
+                        <img src="dream-catcher.png" alt="" height="250px" >
+                    </div>
+                    <p class="text1">Dream catcher drawing</p>
+                    <p class="text2">Handmade with love</p>
+                </div>
+                    <div class="end">
+                        <h6>$18.49</h6>
+                        <button>Add
+                            <img src="cart-icon-white.png" alt="" height="20px" width="20px">
+                        </button>
+                    </div>
+            </div>
+    </div>
+</body>
+</html>

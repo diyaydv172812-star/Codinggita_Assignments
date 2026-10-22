@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height: 600px;
+            width: 400px;
+            background-color: black;
+            opacity: 0.9;
+            padding: 1px;
+            box-sizing: border-box;
+            border-radius: 10px;
+
+        }
+        .main h6{
+            color: white;
+            font-size: 50px;
+            text-align: right;
+            margin: 10px;
+            padding: 10px 15px;
+            border: 2px solid grey;
+            border-radius: 10px;
+            box-sizing: border-box;
+            
+        }
+        button{
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background-color: #333333;
+            font-size: 30px;
+            border: solid #333333;
+            color: white;
+        }
+        .main .row1,.row2,.row3,.row4,.row5{
+            display: flex;
+            gap: 20px;
+            padding-left: 10px;
+        }
+        .part1 {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .no{
+            background-color: #FF9500;
+            color: white;
+            border: solid #FF9500;
+        }
+        .we{
+            width:180px;
+            border-radius: 40px;
+        }
+        .same{
+            background-color: #A5A5A5;
+            color: black;
+            border: solid #A5A5A5;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h6>7744</h6>
+      <div class="part1">
+        <div class="row1">
+            <button class="same">C</button>
+            <button class="same">+/-</button>
+            <button class="same">%</button>
+            <button class="no">/</button>
+        </div>
+        <div class="row2">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="no">*</button>
+        </div> 
+        <div class="row3">
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="no">-</button>
+        </div> 
+        <div class="row4">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="no">+</button>
+        </div>
+        <div class="row5">
+            <button class="we">0</button>
+            <button>,</button>
+            <button class="no">=</button>
+        </div>
+      </div>      
+    </div>
+</body>
+</html>

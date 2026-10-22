@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            height: 100vh;
+            width: 60%;
+            /* border: 1px groove black; */
+        }
+        .box1{
+            height: 40%;
+            width: 100%;
+            border: 1px solid black;
+            display: flex;
+        }
+        .box2{
+            height: 20%;
+            width: 100%;
+            border: 1px solid black;
+            display: flex;
+        }
+        .box3{
+            height: 40%;
+            width: 100%;
+            border: 1px solid black;
+            display: flex;
+        }
+        .red{
+            height: 100%;
+            width: 40%;
+            background-color: red;
+            /* opacity: 0.7; */
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .space{
+            height: 100%;
+            width: 20%;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        .green{
+            height: 100%;
+            width: 40%;
+            background-color: green;
+            /* opacity: 0.7; */
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .blue{
+            height: 100%;
+            width: 40%;
+            background-color: blue;
+            /* opacity: 0.7; */
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .yellow{
+            height: 100%;
+            width: 40%;
+            background-color: yellow;
+            /* opacity: 0.7; */
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .space1 {
+            height: 100%;
+            width: 40%;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            box-sizing: border-box;
+        }
+        .space1 div {
+            height: 33.333%;
+            width: 16.666%;
+            border: 1px solid black;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+        .finish{
+            height: 100%;
+            width: 20%;
+            border: 1px solid black;
+        }
+        .white{
+            height: 70%;
+            width: 70%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tokenred{
+            height: 35%;
+            width: 35%;
+            border-radius: 50%;
+            border:5px solid red;
+            box-sizing: border-box;
+            display: flex;
+
+        }
+        .tokengreen{
+            height: 35%;
+            width: 35%;
+            border-radius: 50%;
+            border:5px solid green;
+            box-sizing: border-box;
+            display: flex;
+        }
+        .tokenblue{
+            height: 35%;
+            width: 35%;
+            border-radius: 50%;
+            border:5px solid blue;
+            box-sizing: border-box;
+            display: flex;
+        }
+        .tokenyellow{
+            height: 35%;
+            width: 35%;
+            border-radius: 50%;
+            border:5px solid yellow;
+            box-sizing: border-box;
+            display: flex;
+        }
+        .space div {
+            height: 16.666%;
+            width: 33.333%;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .rowred{
+            background-color: red;
+        }
+        .rowyellow{
+            background-color: yellow;
+        }
+        .rowgreen{
+            background-color: green;
+        }
+        .rowblue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box1">
+            <div class="red">
+                <div class="white">
+                    <div class="tokenred">
+                    </div>
+                    <div class="tokenred">
+                    </div>
+                    <div class="tokenred">
+                    </div>
+                    <div class="tokenred">
+                    </div>
+                </div>
+            </div>
+            <div class="space">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="rowgreen"></div>
+                <div class="rowgreen"><img src="star.png" alt="" height="100%" width="80%" ></div>
+                <div class="rowgreen"><img src="star.png" alt="" height="100%" width="80%" ></div>
+                <div class="rowgreen"></div>
+                <div></div>
+                <div></div>
+                <div class="rowgreen"></div>
+                <div></div>
+                <div></div>
+                <div class="rowgreen"></div>
+                <div></div>
+                <div></div>
+                <div class="rowgreen"></div>
+                <div></div>
+            </div>
+            <div class="green">
+                <div class="white">
+                    <div class="tokengreen">
+                    </div>
+                    <div class="tokengreen">
+                    </div>
+                    <div class="tokengreen">
+                    </div>
+                    <div class="tokengreen">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="space1">
+                <div></div>
+                <div class="rowred"><img src="star.png" alt="" height="100%" width="80%" ></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="rowred"></div>
+                <div class="rowred"></div>
+                <div class="rowred"></div>
+                <div class="rowred"></div>
+                <div class="rowred"></div>
+                <div></div>
+                <div></div>
+                <div class="rowred"><img src="star.png" alt="" height="100%" width="80%" ></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="finish">
+
+            </div>
+            <div class="space1">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="rowyellow"><img src="star.png" alt="" height="100%" width="80%" ></div>
+                <div></div>
+                <div></div>
+                <div class="rowyellow"></div>
+                <div class="rowyellow"></div>
+                <div class="rowyellow"></div>
+                <div class="rowyellow"></div>
+                <div class="rowyellow"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="rowyellow"><img src="star.png" alt="" height="100%" width="80%" ></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="blue">
+                <div class="white">
+                    <div class="tokenblue">
+                    </div>
+                    <div class="tokenblue">
+                    </div>
+                    <div class="tokenblue">
+                    </div>
+                    <div class="tokenblue">
+                    </div>
+                </div>
+            </div>
+            <div class="space">
+                <div></div>
+                <div class="rowblue"></div>
+                <div></div>
+                <div></div>
+                <div class="rowblue"></div>
+                <div></div>
+                <div></div>
+                <div class="rowblue"></div>
+                <div></div>
+                <div></div>
+                <div class="rowblue"></div>
+                <div class="rowblue"><img src="star.png" alt="" height="100%" width="80%" ></div>
+                <div class="rowblue"><img src="star.png" alt="" height="100%" width="80%" ></div>
+                <div class="rowblue"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="yellow">
+                <div class="white">
+                    <div class="tokenyellow">
+                    </div>
+                    <div class="tokenyellow">
+                    </div>
+                    <div class="tokenyellow">
+                    </div>
+                    <div class="tokenyellow">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
