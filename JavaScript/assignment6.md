@@ -1,4 +1,4 @@
-Section 1: What Is a Function?
+    Section 1: What Is a Function?
 Why do we use functions instead of writing the same code again and again? Explain with one simple example.
 List any four advantages of functions and write one line for each advantage.
 Imagine you have to display a welcome message at 6 different places in your program. How will a function help you here?
@@ -200,3 +200,154 @@ console.log(findAverage(40, 50, 60));
 5.Code Reusability – Use code multiple times.
 Easy Debugging – Find errors easily.
 Less Repetition – Avoid writing the same code again and again.
+
+Section 8: Function Scope
+Practical Questions
+
+Create a function showCity that declares a local variable city = "Ahmedabad" and prints it. After calling the function, try to print city outside and note what happens.
+Declare a global variable trainer = "CodingGita Mentor". Write a function displayTrainer that prints this global variable. Call the function and also print the variable outside the function.
+Write a function demoScope that contains a local variable value = 50. Print the variable inside the function. Then try accessing the same variable outside and explain the output/error.
+Theory Questions 4. A variable declared inside a function cannot be used outside. Why does JavaScript follow this rule? How does it help in writing better programs?
+5. What will happen if a global variable and a local variable have the same name? Which one will the function use? Explain briefly.
+
+Answer:
+1.
+function showCity() {
+    let city = "Ahmedabad";
+    console.log(city);
+}
+showCity();
+console.log(city); // ReferenceError: city is not defined
+
+2.
+let trainer = "CodingGita Mentor";
+function displayTrainer() {
+    console.log(trainer);
+}
+displayTrainer();
+console.log(trainer);
+
+3.
+function demoScope() {
+    let value = 50;
+    console.log(value);
+}
+demoScope();
+console.log(value); // ReferenceError: value is not defined
+
+4.
+A local variable belongs only to its function. This protects data and avoids unwanted changes or conflicts.
+
+5.
+The function uses the local variable because local variables have priority inside their scope. This is called Variable Shadowing.
+
+Section 9: Combining Function Concepts
+Practical Questions
+
+Write a function generateMessage(name, score) that calculates whether the student has passed (score ≥ 40) and returns a complete sentence like: "Aarav has scored 65 and the result is Pass".
+Create a function billCalculator(item1, item2, item3) that returns the total amount and also mentions if the customer gets a discount (total ≥ 1000 → "Discount Applied", otherwise "No Discount").
+Write a function performanceReport(student, m1, m2, m3) that calculates total and average, then returns a formatted string containing name, total, average and a remark ("Excellent" if average ≥ 80, otherwise "Keep Improving").
+Theory Questions
+
+Why is it better to perform multiple related tasks (calculation + decision + message) inside one function instead of writing separate pieces of code?
+How does combining concepts like parameters, return and conditions inside a single function improve code quality?
+Answer:
+1.
+function generateMessage(name, score) {
+    if (score >= 40) {
+        return name + " has scored " + score + " and the result is Pass";
+    } else {
+        return name + " has scored " + score + " and the result is Fail";
+    }
+}
+console.log(generateMessage("Aarav", 65));
+
+2.
+function billCalculator(item1, item2, item3) {
+    let total = item1 + item2 + item3;
+
+    if (total >= 1000) {
+        return "Total = " + total + ", Discount Applied";
+    } else {
+        return "Total = " + total + ", No Discount";
+    }
+}
+console.log(billCalculator(400, 300, 500));
+
+3.
+function performanceReport(student, m1, m2, m3) {
+    let total = m1 + m2 + m3;
+    let average = total / 3;
+    let remark;
+    if (average >= 80) {
+        remark = "Excellent";
+    } else {
+        remark = "Keep Improving";
+    }
+    return "Name: " + student +
+           ", Total: " + total +
+           ", Average: " + average +
+           ", Remark: " + remark;
+}
+console.log(performanceReport("Aarav", 85, 90, 80));
+
+4.
+It keeps related code together, makes the program easy to understand, and reduces code repetition.
+
+5.
+- Parameters make functions reusable.
+- Return gives back the result.
+- Conditions help make decisions.
+Together, they make code organized, reusable and easy to maintain.
+
+Section 10: Nested Functions
+Practical Questions
+
+Write a function mainTask that contains an inner function helperTask. The inner function should return "Task completed successfully". Call the inner function from mainTask and return its result.
+Create a function calculateFinal(m1, m2) that has an inner function getTotal to add the marks. Use the inner function and return a message: "Final marks = " followed by the total.
+Write a function studentStatus(name, marks) containing an inner function getGrade. The inner function returns "A" if marks ≥ 80, "B" if marks ≥ 60, otherwise "C". Return a final sentence using the name and grade.
+Theory Questions
+
+What is the main advantage of writing a function inside another function? When should we use nested functions?
+Can an inner function access variables of the outer function? What about the reverse (outer accessing inner variables)? Explain.
+Answer:
+1.
+function mainTask() {
+    function helperTask() {
+        return "Task completed successfully";
+    }
+    return helperTask();
+}
+console.log(mainTask());
+
+2.
+function calculateFinal(m1, m2) {
+    function getTotal() {
+        return m1 + m2;
+    }
+    return "Final marks = " + getTotal();
+}
+console.log(calculateFinal(40, 50));
+
+3.
+function studentStatus(name, marks) {
+    function getGrade() {
+        if (marks >= 80) {
+            return "A";
+        } else if (marks >= 60) {
+            return "B";
+        } else {
+            return "C";
+        }
+    }
+    return name + " has grade " + getGrade();
+}
+console.log(studentStatus("Aarav", 85));
+
+4.
+Nested functions keep helper functions private and organize related code. They are useful when a function is needed only inside another function.
+
+5.
+- Inner function can access variables of the outer function.
+- Outer function cannot directly access variables declared inside the inner function.
+This happens because of JavaScript scope rules.
