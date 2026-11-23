@@ -190,3 +190,222 @@ includes() returns a boolean value: true if the specified element is found in th
 5.
 Yes. It works identically for numbers, strings, and booleans. It performs a strict equality check (===) to look for the
 element, meaning type and value must both match.
+
+8. reverse()
+
+Create an array of 5 numbers and reverse it. Print the array before and after reversing.
+Create ["A", "B", "C", "D"]. Reverse the array and print the result.
+Create an array of 4 city names, reverse it, and print the final array.
+Does reverse() create a new array or modify the original one?
+What is the meaning of “in-place” when we say reverse() works in-place?
+Answer:
+1.
+let numbers = [10, 20, 30, 40, 50];
+console.log("Before reversing:", numbers);
+numbers.reverse();
+console.log("After reversing:", numbers); 
+2.
+let letters = ["A", "B", "C", "D"];
+letters.reverse();
+console.log(letters);
+3.
+let cities = ["Delhi", "Mumbai", "Bengaluru", "Chennai"];
+cities.reverse();
+console.log(cities);
+4.
+reverse() modifies the original array directly (it is a mutating method).
+5.
+When something works in-place, it means it alters the existing data structure directly in memory rather than allocating
+memory for a brand-new copy. In the case of reverse(), it rearranges the elements of the original array itself and returns 
+that same mutated array.
+
+9. sort() – Basic Version
+
+Sort an array of 5 student names alphabetically and print the result.
+Create an array ["Dog", "Cat", "Elephant", "Ant"] and sort it. Print the sorted array.
+Create the array [40, 100, 5, 25] and sort it. Print the result.
+Why does sort() give an incorrect order for the numbers [40, 100, 5, 25]?
+Does sort() change the original array?
+Answer:
+1.
+let students = ["Rohan", "Aarav", "Priya", "Sneha", "Karan"];
+students.sort();
+console.log(students);
+2.
+let animals = ["Dog", "Cat", "Elephant", "Ant"];
+animals.sort();
+console.log(animals);
+3.
+let numbers = [40, 100, 5, 25];
+numbers.sort();
+console.log(numbers);
+4.
+By default, the sort() method converts elements into strings and compares their values based on Unicode code points
+(dictionary/alphabetical order). Because it compares strings, "100" comes before "25" because the character '1' 
+comes before '2'.
+5.
+Yes. The sort() method sorts the elements in-place, which means it modifies the original array directly rather than creating a new
+sorted copy.
+
+10. join()
+
+Convert an array of 4 programming languages into a string separated by " | ".
+Create ["HTML", "CSS", "JavaScript"]. Join them with " - " and print the string.
+Create an array of 3 of your favorite subjects and join them using " / ".
+What happens if you do not pass any separator to join()?
+What does join() return – an array or a string?
+Answer:
+1.
+let languages = ["JavaScript", "Python", "Java", "C++"];
+let result = languages.join(" | ");
+console.log(result);
+2.
+let frontEnd = ["HTML", "CSS", "JavaScript"];
+let result = frontEnd.join(" - ");
+console.log(result);
+3.
+let subjects = ["Maths", "Physics", "Computer Science"];
+let result = subjects.join(" / ");
+console.log(result);
+4.
+If no separator argument is provided, elements are separated by a comma (,) by default (the array elements are converted to 
+strings and joined with commas).
+5.
+join() returns a string created by concatenating all the elements of the array.
+
+11. concat()
+
+Create two arrays of numbers and combine them using concat(). Print the new array and both original arrays.
+Create arr1 = [1, 2] and arr2 = [3, 4]. Use concat() and print the result.
+Create three small arrays and combine all of them using a single concat() call.
+Does concat() change the original arrays?
+Can you combine more than two arrays using one concat() call?
+Answer:
+1.
+let arrA = [1, 2, 3];
+let arrB = [4, 5, 6];
+let combined = arrA.concat(arrB);
+console.log("Original Array 1:", arrA);   
+console.log("Original Array 2:", arrB);       
+console.log("Combined Array:", combined);  
+2.
+let arr1 = [1, 2];
+let arr2 = [3, 4];
+let result = arr1.concat(arr2);
+console.log(result);
+3.
+let a = [1, 2];
+let b = [3, 4];
+let c = [5, 6];
+let resultAll = a.concat(b, c);
+console.log(resultAll); 
+4.
+No. concat() is a non-mutating method. It leaves the original arrays completely unchanged and returns a brand-new array 
+containing the combined elements.
+5.
+Yes. You can pass multiple arguments (arrays or individual values) separated by commas into a single concat() call, and it 
+will merge all of them together in the order they are provided.
+
+12. slice()
+
+From the array [5, 10, 15, 20, 25, 30], extract elements from index 2 to 5 using slice().
+Create [10, 20, 30, 40, 50]. Use slice(1, 4) and print both the new array and the original array.
+Create an array of 6 numbers. Extract the first 3 elements using slice() and print them.
+Does slice() modify the original array?
+What happens if you omit the second argument in slice()?
+Answer:
+1.
+let numbers = [5, 10, 15, 20, 25, 30];
+let slicedArr = numbers.slice(2, 5); 
+console.log(slicedArr);
+2.
+let original = [10, 20, 30, 40, 50];
+let extracted = original.slice(1, 4);
+console.log("New array:", extracted);  
+console.log("Original array:", original); 
+3.
+let nums = [12, 24, 36, 48, 60, 72];
+let firstThree = nums.slice(0, 3);
+console.log(firstThree);
+4.
+No. slice() is a non-mutating method. It returns a brand-new array containing a shallow copy of the extracted portion, 
+leaving the original array completely unchanged.
+5.
+If you omit the second argument, slice() extracts all elements from the specified starting index all the way to the end of the array.
+(For example, arr.slice(2) will copy everything from index 2 onward).
+
+13. splice()
+
+Start with ["Jenil", "Mahir", "Arjun"]. Use splice() to insert "Krishna" between Jenil and Mahir.
+Create [10, 20, 30, 40, 50]. Remove two elements starting from index 1 and insert a new number at that position. Print the final array.
+Create [100, 200, 300]. Use splice() to replace 200 with 250 and print the array.
+What is the main difference between slice() and splice()?
+Does splice() change the original array?
+Answer:
+1.
+let names = ["Jenil", "Mahir", "Arjun"];
+names.splice(1, 0, "Krishna"); 
+console.log(names);
+2.
+let numbers = [10, 20, 30, 40, 50];
+numbers.splice(1, 2, 99); 
+console.log(numbers); 
+3.
+let arr = [100, 200, 300];
+arr.splice(1, 1, 250); 
+console.log(arr); 
+4.
+slice() is a non-mutating method that extracts a portion of an array and returns it as a new array without changing the original one.
+splice() is a mutating method used to add, remove, or replace elements directly inside the original array.
+5.
+Yes. splice() modifies the original array in place and returns a new array containing any elements that were removed from it.
+
+14. toString()
+
+Convert an array of your 4 favorite movies into a string using toString() and print it.
+Create [1, 2, 3, 4] and convert it to a string using toString(). Print the result.
+Create an array of 3 subject names and convert it using toString().
+How is toString() different from join()?
+What separator does toString() use by default?
+Answer:
+1.
+let movies = ["3 Idiots", "Dangal", "Zindagi Na Milegi Dobara", "Chhichhore"];
+console.log(movies.toString());
+2.
+let numbers = [1, 2, 3, 4];
+let result = numbers.toString();
+console.log(result); 
+3.
+let subjects = ["Maths", "Physics", "Chemistry"];
+console.log(subjects.toString());
+4.
+toString() automatically converts the array to a string separated strictly by commas, and you cannot pass any custom separator argument.
+join() lets you specify a custom separator (such as a hyphen, space, pipe, or empty string) instead of being restricted to commas.
+5.
+toString() always uses a comma (,) as the separator between elements.
+
+15. fill()
+
+Create an array of 6 numbers and fill the entire array with the value 10.
+Create [1, 2, 3, 4, 5] and fill it with 0. Print the result.
+Create an array of 4 elements and fill it with the string "Hello".
+Does fill() change the original array?
+Can fill() change only a part of the array?
+Answer:
+1.
+let arr = new Array(6);
+arr.fill(10);
+console.log(arr);
+2.
+let nums = [1, 2, 3, 4, 5];
+nums.fill(0);
+console.log(nums); 
+3.
+let greetings = new Array(4);
+greetings.fill("Hello");
+console.log(greetings); 
+4.
+Yes. fill() is a mutating method that modifies the original array in place and returns the modified array.
+5.
+Yes. You can pass optional start and end indices (arr.fill(value, start, end)) to specify a particular range to fill, leaving the 
+rest of the array untouched.
