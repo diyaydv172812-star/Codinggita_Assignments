@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #141414;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .hero-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            /* REPLACE 'Title-Image.png' WITH YOUR MAID HERO BACKGROUND IMAGE */
+            background-image: url('Title-Image.png');
+            background-size: cover;
+            background-position: center top;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, transparent 18%),
+                linear-gradient(to top, #141414 8%, rgba(20, 20, 20, 0.75) 26%, transparent 52%),
+                linear-gradient(to right, rgba(0, 0, 0, 0.35) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        nav {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding: 18px 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .netflix-logo {
+            height: 26px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: #e5e5e5;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a.active {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .nav-links a:hover {
+            color: #b3b3b3;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .nav-icon {
+            height: 20px;
+            width: 20px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+
+        .profile-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .profile-avatar {
+            height: 28px;
+            width: 28px;
+            border-radius: 3px;
+            object-fit: cover;
+        }
+
+        .caret {
+            font-size: 10px;
+            color: #ffffff;
+        }
+
+        /* --- MAID TITLE & ACTION BUTTONS --- */
+        .hero-main {
+            position: relative;
+            z-index: 10;
+            padding: 0 45px;
+            margin-top: 110px;
+        }
+
+        .n-series-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .n-symbol {
+            height: 24px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .show-text {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #e5e5e5;
+        }
+
+        .hero-title {
+            font-size: 6.2rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            line-height: 0.95;
+            margin-bottom: 22px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 9px 22px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        .btn-play {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .btn-info {
+            background-color: rgba(109, 109, 110, 0.75);
+            color: #ffffff;
+        }
+
+        .btn img {
+            height: 16px;
+            width: 16px;
+            object-fit: contain;
+        }
+
+        .row-section {
+            position: relative;
+            z-index: 10;
+            padding: 20px 45px;
+        }
+
+        .row-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .row-header span {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+
+        .card {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 3px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.25s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            z-index: 20;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .top10-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .top10-item {
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.25s ease;
+        }
+
+        .top10-item:hover {
+            transform: scale(1.05);
+            z-index: 20;
+        }
+        .rank-img {
+            width: 48%;
+            height: 165px;
+            object-fit: contain;
+            margin-right: -12px; /* Slight overlap behind the movie poster */
+            z-index: 1;
+        }
+        .top10-poster {
+            width: 55%;
+            aspect-ratio: 2 / 3;
+            border-radius: 3px;
+            object-fit: cover;
+            z-index: 2;
+            box-shadow: -4px 0 12px rgba(0, 0, 0, 0.6);
+        }
+        footer {
+            max-width: 980px;
+            margin: 60px auto 35px auto;
+            padding: 0 45px;
+            color: #808080;
+            font-size: 13px;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin-bottom: 20px;
+        }
+
+        .social-links img {
+            height: 22px;
+            width: 22px;
+            object-fit: contain;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .social-links img:hover {
+            opacity: 0.7;
+        }
+
+        .netflix-footer {
+    max-width: 980px;
+    margin: 60px auto 30px auto;
+    padding: 0 40px;
+    color: #808080;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Social Icons Row */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.social-icons img:hover {
+    opacity: 1;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px 20px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+}
+
+.footer-links a {
+    color: #808080;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.service-code-btn {
+    background-color: transparent;
+    color: #808080;
+    border: 1px solid #808080;
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.service-code-btn:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #808080;
+    margin: 0;
+}
+
+        @media (max-width: 768px) {
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 1024px) {
+            .cards-grid, .top10-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 650px) {
+            .nav-links {
+                display: none;
+            }
+            .cards-grid, .top10-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            nav, .hero-main, .row-section, footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-wrapper">
+        <nav>
+            <div class="nav-left">
+                <img src="NetflixLogoSvg.png" alt="Netflix" class="netflix-logo">
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Start</a></li>
+                    <li><a href="#">Shows</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">My List</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <img src="Search.png" alt="Search" class="nav-icon">
+                <img src="GiftBox.png" alt="Gift" class="nav-icon">
+                <img src="NotificationBell.png" alt="Notifications" class="nav-icon">
+                <div class="profile-box">
+                    <img src="ProfileIMG.png" alt="Profile" class="profile-avatar">
+                    <span class="caret">&#9662;</span>
+                </div>
+            </div>
+        </nav>
+        <div class="hero-main">
+            <div class="n-series-badge">
+                <img src="Netflix_Symbol_RGB 1.png" alt="N" class="n-symbol">
+                <span class="show-text">SHOW</span>
+            </div>  
+            <h1 class="hero-title">MAID</h1>
+            <div class="hero-buttons">
+                <button class="btn btn-play">
+                    <img src="play.png" alt="" onerror="this.style.display='none'"> &#9654; Play
+                </button>
+                <button class="btn btn-info">
+                    <img src="Detail.png" alt="" onerror="this.style.display='none'"> &#9432; More info
+                </button>
+            </div>
+        </div>
+        <section class="row-section">
+            <div class="row-header">
+                See again <span>&gt;</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card"><img src="section 1.1.png" alt="You"></div>
+                <div class="card"><img src="section 1.2.png" alt="Snowpiercer"></div>
+                <div class="card"><img src="section 1.3.png" alt="The Universe"></div>
+                <div class="card"><img src="section 1.4.png" alt="The Last Kingdom"></div>
+                <div class="card"><img src="section 1.5.png" alt="Money Heist"></div>
+            </div>
+        </section>
+    </div>
+    <section class="row-section">
+        <div class="row-header">
+            Top 10 in your country <span>&gt;</span>
+        </div>
+        <div class="top10-grid">
+            <div class="top10-item">
+                <img src="Rank - 01.png" alt="1" class="rank-img">
+                <img src="section 2.1.png" alt="Red Notice" class="top10-poster">
+            </div>
+            <div class="top10-item">
+                <img src="Rank - 02.png" alt="2" class="rank-img">
+                <img src="section 2.2.png" alt="Jason Bourne" class="top10-poster">
+            </div>
+            <div class="top10-item">
+                <img src="Rank - 03.png" alt="3" class="rank-img">
+                <img src="section 2.3.png" alt="Squid Game" class="top10-poster">
+            </div>
+            <div class="top10-item">
+                <img src="Rank - 04.png" alt="4" class="rank-img">
+                <img src="section 2.4.png" alt="Central Intelligence" class="top10-poster">
+            </div>
+            <div class="top10-item">
+                <img src="Rank - 05.png" alt="5" class="rank-img">
+                <img src="section 2.5.png" alt="Hellbound" class="top10-poster">
+            </div>
+        </div>
+    </section>
+    <section class="row-section">
+            <div class="row-header">
+                Tranding now <span>&gt;</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card"><img src="section 3.1.png" alt="You"></div>
+                <div class="card"><img src="section 3.2.png" alt="Snowpiercer"></div>
+                <div class="card"><img src="section 3.3.png" alt="The Universe"></div>
+                <div class="card"><img src="section 3.4.png" alt="The Last Kingdom"></div>
+                <div class="card"><img src="section 3.5.png" alt="Money Heist"></div>
+            </div>
+    </section>
+    <section class="row-section">
+            <div class="row-header">
+                Sci-fi shows <span>&gt;</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card"><img src="section 4.1.png" alt="You"></div>
+                <div class="card"><img src="section 4.2.png" alt="Snowpiercer"></div>
+                <div class="card"><img src="section 4.3.png" alt="The Universe"></div>
+                <div class="card"><img src="section 4.4.png" alt="The Last Kingdom"></div>
+                <div class="card"><img src="section 4.5.png" alt="Money Heist"></div>
+            </div>
+    </section>
+    <footer class="netflix-footer">
+    <div class="social-icons">
+        <a href="#"><img src="facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="youtube.png" alt="YouTube"></a>
+    </div>
+    <ul class="footer-links">
+        <li><a href="#">Seslendirme ve Alt Yazı</a></li>
+        <li><a href="#">Sesli Betimleme</a></li>
+        <li><a href="#">Yardım Merkezi</a></li>
+        <li><a href="#">Hediye Kartları</a></li>
+
+        <li><a href="#">Medya Merkezi</a></li>
+        <li><a href="#">Yatırımcı İlişkileri</a></li>
+        <li><a href="#">İş İmkanları</a></li>
+        <li><a href="#">Kullanım Koşulları</a></li>
+
+        <li><a href="#">Gizlilik</a></li>
+        <li><a href="#">Yasal Hükümler</a></li>
+        <li><a href="#">Çerez Tercihleri</a></li>
+        <li><a href="#">Kurumsal Bilgiler</a></li>
+
+        <li><a href="#">Bize Ulaşın</a></li>
+    </ul>
+    <button class="service-code-btn">Hizmet Kodu</button>
+    <p class="copyright">© 1997-2021 Netflix, Inc. {i-062d573a0ee099242}</p>
+</footer>
+
+</body>
+</html>
